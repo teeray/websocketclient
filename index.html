@@ -19,7 +19,9 @@ connection.onerror = (error) => {
 }
  
 connection.onmessage = (e) => {
-  console.log(e.data)
+  
+  const text = document.createTextNode(e.data);
+  document.appendChild(text);
 }
 </script>
 </html>
