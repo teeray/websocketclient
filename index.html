@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+</body>
+<!-- <script src="client.js" language="javascript" type="text/javascript"></script> -->
+<script type="module">
+    // const WebSocket = require('ws')
+//     import WebSocket from 'ws';
+const url = 'ws://localhost:8080'
+const connection = new WebSocket(url)
+ 
+connection.onopen = () => {
+  connection.send('Message From Client') 
+}
+  
+connection.onerror = (error) => {
+  console.log(`WebSocket error: ${error}`)
+}
+ 
+connection.onmessage = (e) => {
+  console.log(e.data)
+}
+</script>
+</html>
