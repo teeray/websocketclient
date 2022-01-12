@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+<div id="text"></div>
 
 </body>
 <!-- <script src="client.js" language="javascript" type="text/javascript"></script> -->
@@ -19,9 +20,10 @@ connection.onerror = (error) => {
 }
  
 connection.onmessage = (e) => {
-  
+
+  const body = document.getElementById('text')
   const text = document.createTextNode(e.data);
-  document.appendChild(text);
+  body.appendChild(text);
 }
 </script>
 </html>
